@@ -16,9 +16,40 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class GMapsAPI extends JFrame{
 		int zoom = 12;
+		private JTextField textField;
 	    
 	    public GMapsAPI() {
 	        super("AC Intelligence");
+	        getContentPane().setLayout(null);
+	        
+	        JPanel panel = new JPanel();
+	        panel.setBounds(10, 36, 684, 520);
+	        getContentPane().add(panel);
+	        
+	        JLabel lblBuscarLocal = new JLabel("Buscar Local");
+	        lblBuscarLocal.setBounds(10, 11, 59, 14);
+	        getContentPane().add(lblBuscarLocal);
+	        
+	        textField = new JTextField();
+	        textField.setBounds(79, 8, 126, 20);
+	        getContentPane().add(textField);
+	        textField.setColumns(10);
+	        
+	        JButton btnBuscar = new JButton("Buscar");
+	        btnBuscar.setBounds(215, 7, 70, 23);
+	        getContentPane().add(btnBuscar);
+	        
+	        JButton btnMais = new JButton("+");
+	        btnMais.setBounds(502, 7, 43, 23);
+	        getContentPane().add(btnMais);
+	        
+	        JLabel lblZoom = new JLabel("Zoom");
+	        lblZoom.setBounds(460, 11, 32, 14);
+	        getContentPane().add(lblZoom);
+	        
+	        JButton btnMenos = new JButton("-");
+	        btnMenos.setBounds(555, 7, 43, 23);
+	        getContentPane().add(btnMenos);
 	        atualizarMapa();
 	    }
 
