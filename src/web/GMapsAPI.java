@@ -23,6 +23,7 @@ public class GMapsAPI extends JFrame{
 		//método construtor
 	    public GMapsAPI() {
 	        super("AC Intelligence");
+	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        desenhaJanela();
 	        atualizarMapa();
 	    }
@@ -46,7 +47,9 @@ public class GMapsAPI extends JFrame{
 	        JButton btnBuscar = new JButton("Buscar");
 	        btnBuscar.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent e) {
-	        		
+	        		local = textFieldBuscar.getText();
+	        		local = local.replaceAll("\\s", "+");
+	        		atualizarMapa();
 	        	}
 	        });
 	        btnBuscar.setBounds(215, 7, 70, 23);
@@ -154,7 +157,7 @@ public class GMapsAPI extends JFrame{
 	        
 	        String chave="AIzaSyDfTYJZVmCdT5Hart3mtwa5HrQzAf_Z_NM";
 	        
-	        String endereco = "http://maps.googleapis.com/maps/api/staticmap?center=Ceagriii-8.016218,-34.945221&zoom=" + zoom + "&size=640x640&markers=color:blue%7Clabel:%7C-8.017631,-34.944363&maptype=roadmap&key="+chave+"&sensor=false&format=jpg";
+	        String endereco = "http://maps.googleapis.com/maps/api/staticmap?center="+ local +"-8.016218,-34.945221&zoom=" + zoom + "&size=640x640&markers=color:blue%7Clabel:%7C" + local + "&maptype=roadmap&key="+chave+"&sensor=false&format=jpg";
 	        java.awt.image.BufferedImage img = null;
 
 	        try {
