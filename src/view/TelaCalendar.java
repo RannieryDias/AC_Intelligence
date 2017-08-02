@@ -39,7 +39,7 @@ public class TelaCalendar extends javax.swing.JFrame {
             lbMinutos.setText(String.valueOf(minutos));
             lbSegundos.setText(String.valueOf(segundos));
         }
-        jcalendar calendario = new jcalendar(); 
+
       
     }
 
