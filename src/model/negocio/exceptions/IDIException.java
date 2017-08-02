@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.dados;
+package model.negocio.exceptions;
 
 /**
  *
  * @author Kira
  */
-public class NewClass {
-    
+public class IDIException extends Exception {
+    public IDIException(String id){
+        super("ID" + id + "fora do padrão");
+    }
 }
