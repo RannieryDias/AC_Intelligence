@@ -5,7 +5,7 @@
  */
 package view;
 
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import conexao.ConexaoBD;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -544,7 +544,7 @@ public class CadastroServico extends javax.swing.JFrame {
 
     private void tfTelefoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfTelefoneKeyTyped
        char c = evt.getKeyChar();
-        if((c<'0' || c>'9') && (c!=(char)KeyEvent.VK_BACKSPACE)){ 
+        if((c<'0' || c>'9') && (c!=(char)KeyEvent.VK_BACK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"ADMITE APENAS NÚMEROS","", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -552,7 +552,7 @@ public class CadastroServico extends javax.swing.JFrame {
 
     private void tfValorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfValorKeyTyped
         char c = evt.getKeyChar();
-        if((c<'0' || c>'9') && (c!=(char)KeyEvent.VK_BACKSPACE)){ 
+        if((c<'0' || c>'9') && (c!=(char)KeyEvent.VK_BACK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"ADMITE APENAS NÚMEROS","", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -560,7 +560,7 @@ public class CadastroServico extends javax.swing.JFrame {
 
     private void tfIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfIdKeyTyped
         char c = evt.getKeyChar();
-        if((c<'0' || c>'9') && (c!=(char)KeyEvent.VK_BACKSPACE)){ 
+        if((c<'0' || c>'9') && (c!=(char)KeyEvent.VK_BACK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"ADMITE APENAS NÚMEROS","", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -568,7 +568,7 @@ public class CadastroServico extends javax.swing.JFrame {
 
     private void tfSolicitadorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfSolicitadorKeyTyped
         char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACKSPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"ADMITE APENAS TEXTO");
         }
@@ -576,7 +576,7 @@ public class CadastroServico extends javax.swing.JFrame {
 
     private void tfNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNomeKeyTyped
         char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACKSPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"|| ADMITE APENAS TEXTO!!! ||");
         }
@@ -584,7 +584,7 @@ public class CadastroServico extends javax.swing.JFrame {
 
     private void tfEnderecoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfEnderecoKeyTyped
         char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACKSPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"|| ADMITE APENAS TEXTO!!! ||");
         }
