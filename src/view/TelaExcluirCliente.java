@@ -5,7 +5,7 @@
  */
 package view;
 
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import conexao.ConexaoBD;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -191,7 +191,7 @@ public class TelaExcluirCliente extends javax.swing.JFrame {
         jPanel2.setBounds(320, 20, 90, 30);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/Logo Javaadul - Cópia.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/Logo Javaadul - CÃ³pia.png"))); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(jButton1);
         jButton1.setBounds(440, 10, 80, 90);
@@ -227,7 +227,7 @@ public class TelaExcluirCliente extends javax.swing.JFrame {
     private void btExcluirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirClienteActionPerformed
         
         if(tfNome.getText().equals("") || tfCpf.getText().equals("")){
-        JOptionPane.showMessageDialog(null,"ALGUM CAMPO ESTÁ VAZIO !!!");  
+        JOptionPane.showMessageDialog(null,"ALGUM CAMPO ESTÃ� VAZIO !!!");  
             return;
         }
        
@@ -236,7 +236,7 @@ public class TelaExcluirCliente extends javax.swing.JFrame {
         if(resposta == JOptionPane.YES_OPTION){
            cliente.setCpf(tfCpf.getText());
            control.excluir(cliente);
-        //LIMPA OS CAMPOS APÓS EXCLUIR
+        //LIMPA OS CAMPOS APÃ“S EXCLUIR
         TelaPrincipal tela = new TelaPrincipal();
         tela.setVisible(true);
         dispose();
@@ -262,7 +262,7 @@ public class TelaExcluirCliente extends javax.swing.JFrame {
 
     private void tfNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNomeKeyTyped
         char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACKSPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"ADMITE APENAS TEXTO","", JOptionPane.INFORMATION_MESSAGE);
         }    }//GEN-LAST:event_tfNomeKeyTyped

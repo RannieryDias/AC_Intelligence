@@ -11,6 +11,8 @@ import java.awt.event.ActionListener;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.Timer;
+import com.toedter.calendar.*;
+import com.toedter.calendar.JCalendar;;
 
 /**
  *
@@ -39,7 +41,7 @@ public class TelaCalendar extends javax.swing.JFrame {
             lbMinutos.setText(String.valueOf(minutos));
             lbSegundos.setText(String.valueOf(segundos));
         }
-        jcalendar calendario = new jcalendar(); 
+        calendar calendario = new calendar(); 
       
     }
 
@@ -165,6 +167,10 @@ public class TelaCalendar extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(30, 20, 700, 380);
+        
+        JDayChooser dayChooser = new JDayChooser();
+        dayChooser.setBounds(0, 33, 175, 133);
+        jPanel1.add(dayChooser);
 
         setSize(new java.awt.Dimension(765, 456));
         setLocationRelativeTo(null);
@@ -227,7 +233,7 @@ public class TelaCalendar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btSair;
     private javax.swing.JButton btVoltar;
-    private org.torrisi.swing.jcalendar.event.CalendarEvent calendarEvent1;
+    private jcalendar.event.CalendarEvent calendarEvent1;
     private javax.swing.JButton jButton1;
     private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JFrame jFrame1;
@@ -239,5 +245,4 @@ public class TelaCalendar extends javax.swing.JFrame {
     private javax.swing.JLabel lbHoras;
     private javax.swing.JLabel lbMinutos;
     private javax.swing.JLabel lbSegundos;
-    // End of variables declaration//GEN-END:variables
 }

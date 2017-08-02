@@ -5,7 +5,7 @@
  */
 package view;
 
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import conexao.ConexaoBD;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -208,7 +208,7 @@ public class TelaBuscarServico extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("ENDEREÇO");
+        jLabel3.setText("ENDEREÃ‡O");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(10, 220, 70, 15);
 
@@ -268,7 +268,7 @@ public class TelaBuscarServico extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("ID DO SERVIÇO");
+        jLabel12.setText("ID DO SERVIÃ‡O");
         jLabel12.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(jLabel12);
         jLabel12.setBounds(260, 20, 120, 19);
@@ -310,7 +310,7 @@ public class TelaBuscarServico extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("BUSCAR SERVIÇOS");
+        jLabel1.setText("BUSCAR SERVIÃ‡OS");
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(jLabel1);
         jLabel1.setBounds(270, 10, 150, 20);
@@ -336,7 +336,7 @@ public class TelaBuscarServico extends javax.swing.JFrame {
     private void btBuscarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarServicoActionPerformed
         
         if(tfPesquisarServico.getText().equals("")){
-        JOptionPane.showMessageDialog(null,"O CAMPO ID ESTÁ VAZIO !!!");  
+        JOptionPane.showMessageDialog(null,"O CAMPO ID ESTÃ� VAZIO !!!");  
             return;
         }
         
@@ -384,14 +384,14 @@ public class TelaBuscarServico extends javax.swing.JFrame {
 
     private void tfNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNomeKeyTyped
         char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACKSPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"ADMITE APENAS TEXTO","", JOptionPane.INFORMATION_MESSAGE);
         }    }//GEN-LAST:event_tfNomeKeyTyped
 
     private void tfSolicitadorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfSolicitadorKeyTyped
         char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACKSPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"ADMITE APENAS TEXTO","", JOptionPane.INFORMATION_MESSAGE);
         }    }//GEN-LAST:event_tfSolicitadorKeyTyped

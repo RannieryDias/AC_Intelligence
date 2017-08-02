@@ -5,7 +5,7 @@
  */
 package view;
 
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import conexao.ConexaoBD;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -152,7 +152,7 @@ public class TelaExcluirServico extends javax.swing.JFrame {
         btVoltarExcluirServico.setBounds(20, 250, 60, 60);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/Logo Javaadul - Cópia.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/Logo Javaadul - CÃ³pia.png"))); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(jButton1);
         jButton1.setBounds(490, 10, 80, 90);
@@ -167,7 +167,7 @@ public class TelaExcluirServico extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("EXCLUIR SERVIÇO");
+        jLabel1.setText("EXCLUIR SERVIÃ‡O");
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(jLabel1);
         jLabel1.setBounds(240, 20, 120, 19);
@@ -220,10 +220,10 @@ public class TelaExcluirServico extends javax.swing.JFrame {
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
         
         if(tfNome.getText().equals("")){
-        JOptionPane.showMessageDialog(null,"O CAMPO NOME ESTÁ VAZIO");  
+        JOptionPane.showMessageDialog(null,"O CAMPO NOME ESTÃ� VAZIO");  
             
         }if(tfId.getText().equals("")){
-            JOptionPane.showMessageDialog(null,"O CAMPO ID ESTÁ VAZIO");  
+            JOptionPane.showMessageDialog(null,"O CAMPO ID ESTÃ� VAZIO");  
             return;
         }
         
@@ -248,7 +248,7 @@ public class TelaExcluirServico extends javax.swing.JFrame {
 
     private void tfNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNomeKeyTyped
         char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACKSPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"ADMITE APENAS TEXTO","", JOptionPane.INFORMATION_MESSAGE);
         }    }//GEN-LAST:event_tfNomeKeyTyped
