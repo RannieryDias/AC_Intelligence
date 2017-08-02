@@ -28,8 +28,8 @@ public class Fachada implements IFachada{
 	}
 	
     
-    @Override
-	public void cadastrarCliente(Cliente cliente) throws ONExistenteException{
+  //  @Override
+	public void cadastrarCliente(Cliente cliente) throws ONExistenteException, CPFIException{
 		cadCliente.cadastrarCliente(cliente);
 	}
 	
