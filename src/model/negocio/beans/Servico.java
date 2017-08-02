@@ -11,12 +11,21 @@ public class Servico {
         private String horario; 
         private String id;
         private String pesquisa;
+        private String localizacao;
         private int cod_servico;
         private int setCod_servico;
         
 	
 
-public Servico(String nome, String endereco, String telefone, String data, String valor, String horario,int cod_servico){
+public String getLocalizacao() {
+			return localizacao;
+		}
+
+		public void setLocalizacao(String localizacao) {
+			this.localizacao = localizacao;
+		}
+
+public Servico(String nome, String endereco, String telefone, String data, String valor, String horario,int cod_servico, String localizacao){
 	
 	this.setNome(nome);
 	this.setEndereco(endereco);
@@ -24,7 +33,8 @@ public Servico(String nome, String endereco, String telefone, String data, Strin
 	this.setTelefone(telefone);
 	this.setValor(valor);
 	this.setHorario(horario);
-        this.setCod_servico(cod_servico);
+    this.setCod_servico(cod_servico);
+    this.setLocalizacao(localizacao);
 }
 
     public Servico() {
