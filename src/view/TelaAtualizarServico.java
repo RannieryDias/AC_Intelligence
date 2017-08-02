@@ -5,7 +5,7 @@
  */
 package view;
 
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import conexao.ConexaoBD;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -101,7 +101,7 @@ public class TelaAtualizarServico extends javax.swing.JFrame {
 
         btPesquisarServico.setBackground(new java.awt.Color(255, 255, 255));
         btPesquisarServico.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btPesquisarServico.setText("ID DO SERVIÇO");
+        btPesquisarServico.setText("ID DO SERVIÃ‡O");
         btPesquisarServico.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btPesquisarServico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,7 +137,7 @@ public class TelaAtualizarServico extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("ENDEREÇO");
+        jLabel2.setText("ENDEREÃ‡O");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(30, 160, 80, 15);
 
@@ -334,7 +334,7 @@ public class TelaAtualizarServico extends javax.swing.JFrame {
     private void btAtualizarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarClienteActionPerformed
         
      if(tfPesquisarServico.getText().equals("")){
-        JOptionPane.showMessageDialog(null,"O CAMPO ID ESTÁ VAZIO");  
+        JOptionPane.showMessageDialog(null,"O CAMPO ID ESTÃ� VAZIO");  
      return;
      }
         
@@ -376,7 +376,7 @@ public class TelaAtualizarServico extends javax.swing.JFrame {
     private void btPesquisarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarServicoActionPerformed
         
         if(tfPesquisarServico.getText().equals("")){
-            JOptionPane.showMessageDialog(null,"DIGITE UM ID VÁLIDO !!!");
+            JOptionPane.showMessageDialog(null,"DIGITE UM ID VÃ�LIDO !!!");
             return;
         }
         
@@ -424,14 +424,14 @@ public class TelaAtualizarServico extends javax.swing.JFrame {
 
     private void tfNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNomeKeyTyped
         char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACKSPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"ADMITE APENAS TEXTO","", JOptionPane.INFORMATION_MESSAGE);
         }    }//GEN-LAST:event_tfNomeKeyTyped
 
     private void tfSolicitadorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfSolicitadorKeyTyped
         char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACKSPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"ADMITE APENAS TEXTO","", JOptionPane.INFORMATION_MESSAGE);
         }    }//GEN-LAST:event_tfSolicitadorKeyTyped

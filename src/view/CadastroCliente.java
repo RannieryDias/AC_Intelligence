@@ -5,7 +5,7 @@
  */
 package view;
 
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import conexao.ConexaoBD;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -238,7 +238,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         jPanel2.setBounds(400, 10, 90, 30);
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/Logo Javaadul - Cópia.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/Logo Javaadul - CÃ³pia.png"))); // NOI18N
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(jButton2);
         jButton2.setBounds(530, 10, 80, 90);
@@ -269,7 +269,7 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("ENDEREÇO");
+        jLabel10.setText("ENDEREÃ‡O");
         jPanel1.add(jLabel10);
         jLabel10.setBounds(20, 110, 70, 15);
 
@@ -332,7 +332,7 @@ public class CadastroCliente extends javax.swing.JFrame {
     private void btSalvarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarClienteActionPerformed
  
      if(tfNomeCliente.getText().equals("") || tfCpf.getText().equals("") || tfEndereco.getText().equals("") || tfTelefone.getText().equals("") || tfEmail.getText().equals("")){
-         JOptionPane.showMessageDialog(null,"ALGUM CAMPO ESTÁ VAZIO"); 
+         JOptionPane.showMessageDialog(null,"ALGUM CAMPO ESTÃ� VAZIO"); 
          return; 
      }
          
@@ -340,8 +340,8 @@ public class CadastroCliente extends javax.swing.JFrame {
         Cliente model = control.validacion(cliente);      
         tfOculta.setText(model.getCpf());
             
-         if(tfCpf.getText().equals(tfOculta.getText())){ // se o valor setado em tfcpf for igual ao que está dentro do equals ele retorna uma mensagem
-            JOptionPane.showMessageDialog(null,"CPF JÁ CADASTRADO !!!");
+         if(tfCpf.getText().equals(tfOculta.getText())){ // se o valor setado em tfcpf for igual ao que estÃ¡ dentro do equals ele retorna uma mensagem
+            JOptionPane.showMessageDialog(null,"CPF JÃ� CADASTRADO !!!");
        
         }else{
         
@@ -351,7 +351,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         cliente.setTelefone(tfTelefone.getText());
         cliente.setEmail(tfEmail.getText());                    
         control.cadastrar(cliente);
-        //LIMPA OS CAMPOS APÓS SALVAR
+        //LIMPA OS CAMPOS APÃ“S SALVAR
         tfNomeCliente.setText(" ");
         tfCpf.setText(" ");
         tfEndereco.setText(" ");
@@ -363,7 +363,7 @@ public class CadastroCliente extends javax.swing.JFrame {
 
     private void tfNomeClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNomeClienteKeyTyped
         char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACKSPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"ADMITE APENAS TEXTO","", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -373,7 +373,7 @@ public class CadastroCliente extends javax.swing.JFrame {
 
     private void tfCpfKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfCpfKeyTyped
         char c = evt.getKeyChar();
-        if((c<'0' || c>'9') && (c!=(char)KeyEvent.VK_BACKSPACE)){ 
+        if((c<'0' || c>'9') && (c!=(char)KeyEvent.VK_BACK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"ADMITE APENAS NÚMEROS","", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -386,13 +386,13 @@ public class CadastroCliente extends javax.swing.JFrame {
         char c = evt.getKeyChar();
         if((c<'0' || c>'9')){ 
             evt.consume();
-            JOptionPane.showMessageDialog(null,"|| ADMITE APENAS NÚMEROS!!! ||","", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"|| ADMITE APENAS NÃšMEROS!!! ||","", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_tfTelefoneKeyTyped
 
     private void tfEnderecoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfEnderecoKeyTyped
         char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACKSPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"|| ADMITE APENAS TEXTO!!! ||","", JOptionPane.INFORMATION_MESSAGE);
         }

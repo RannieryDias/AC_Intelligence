@@ -5,7 +5,7 @@
  */
 package view;
 
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import conexao.ConexaoBD;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,6 +15,9 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import model.dados.RepositorioServico;
 import model.negocio.beans.Servico;
+import javax.swing.JLabel;
+import java.awt.Color;
+import java.awt.Font;
 
 /**
  *
@@ -117,11 +120,11 @@ public class CadastroServico extends javax.swing.JFrame {
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setLayout(null);
 
-        jLabel1.setText("HORÁRIO");
+        jLabel1.setText("HORÃ�RIO");
         jPanel2.add(jLabel1);
         jLabel1.setBounds(20, 230, 60, 14);
 
-        jLabel2.setText("ENDEREÇO");
+        jLabel2.setText("ENDEREÃ‡O");
         jPanel2.add(jLabel2);
         jLabel2.setBounds(20, 80, 70, 14);
 
@@ -311,7 +314,7 @@ public class CadastroServico extends javax.swing.JFrame {
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("ENDEREÇO");
+        jLabel21.setText("ENDERE\u00C7O");
         jPanel4.add(jLabel21);
         jLabel21.setBounds(10, 140, 60, 13);
 
@@ -383,6 +386,12 @@ public class CadastroServico extends javax.swing.JFrame {
                 tfHorarioKeyTyped(evt);
             }
         });
+        
+        lblLocalizao = new JLabel("LOCALIZA\u00C7\u00C3O");
+        lblLocalizao.setFont(new Font("Tahoma", Font.BOLD, 10));
+        lblLocalizao.setForeground(Color.WHITE);
+        lblLocalizao.setBounds(10, 218, 80, 14);
+        jPanel4.add(lblLocalizao);
         jPanel4.add(tfHorario);
         tfHorario.setBounds(400, 130, 240, 30);
 
@@ -450,7 +459,7 @@ public class CadastroServico extends javax.swing.JFrame {
         jLabel8.setBackground(new java.awt.Color(51, 51, 51));
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("CADASTRO SERVIÇO");
+        jLabel8.setText("CADASTRO SERVI\u00C7O");
         jLabel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(jLabel8);
         jLabel8.setBounds(250, 10, 160, 20);
@@ -497,15 +506,15 @@ public class CadastroServico extends javax.swing.JFrame {
         
         
      if(tfId.getText().equals("") ||tfSolicitador.getText().equals("") || tfNome.getText().equals("") || tfEndereco.getText().equals("") || tfTelefone.getText().equals("") || tfValor.getText().equals("") || tfData.getText().equals("") || tfHorario.getText().equals("")){
-         JOptionPane.showMessageDialog(null,"VERFIQUE SE ALGUM CAMPO ESTÁ VAZIO !!!");
+         JOptionPane.showMessageDialog(null,"VERFIQUE SE ALGUM CAMPO ESTÃ� VAZIO !!!");
          return;
      }
         servico.setPesquisa(tfId.getText());
         Servico model = control.validar(servico);      
         tfOculta.setText(model.getId());
              
-         if(tfId.getText().equals(tfOculta.getText())){ // se o valor setado em tfcpf for igual ao que está dentro do equals ele retorna uma mensagem
-            JOptionPane.showMessageDialog(null,"ID JÁ CADASTRADO !!!");
+         if(tfId.getText().equals(tfOculta.getText())){ // se o valor setado em tfcpf for igual ao que estÃ¡ dentro do equals ele retorna uma mensagem
+            JOptionPane.showMessageDialog(null,"ID JÃ� CADASTRADO !!!");
        
      }else{
         
@@ -518,7 +527,7 @@ public class CadastroServico extends javax.swing.JFrame {
         servico.setData(tfData.getText());
         servico.setHorario(tfHorario.getText());
         control.cadastrar(servico);
-        //LIMPA OS CAMPOS APÓS SALVAR
+        //LIMPA OS CAMPOS APÃ“S SALVAR
         tfId.setText(" ");
         tfSolicitador.setText("");
         tfNome.setText(" ");
@@ -544,31 +553,31 @@ public class CadastroServico extends javax.swing.JFrame {
 
     private void tfTelefoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfTelefoneKeyTyped
        char c = evt.getKeyChar();
-        if((c<'0' || c>'9') && (c!=(char)KeyEvent.VK_BACKSPACE)){ 
+        if((c<'0' || c>'9') && (c!=(char)KeyEvent.VK_BACK_SPACE)){ 
             evt.consume();
-            JOptionPane.showMessageDialog(null,"ADMITE APENAS NÚMEROS","", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"ADMITE APENAS NÃšMEROS","", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_tfTelefoneKeyTyped
 
     private void tfValorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfValorKeyTyped
         char c = evt.getKeyChar();
-        if((c<'0' || c>'9') && (c!=(char)KeyEvent.VK_BACKSPACE)){ 
+        if((c<'0' || c>'9') && (c!=(char)KeyEvent.VK_BACK_SPACE)){ 
             evt.consume();
-            JOptionPane.showMessageDialog(null,"ADMITE APENAS NÚMEROS","", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"ADMITE APENAS NÃšMEROS","", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_tfValorKeyTyped
 
     private void tfIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfIdKeyTyped
         char c = evt.getKeyChar();
-        if((c<'0' || c>'9') && (c!=(char)KeyEvent.VK_BACKSPACE)){ 
+        if((c<'0' || c>'9') && (c!=(char)KeyEvent.VK_BACK_SPACE)){ 
             evt.consume();
-            JOptionPane.showMessageDialog(null,"ADMITE APENAS NÚMEROS","", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"ADMITE APENAS NÃšMEROS","", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_tfIdKeyTyped
 
     private void tfSolicitadorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfSolicitadorKeyTyped
         char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACKSPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"ADMITE APENAS TEXTO");
         }
@@ -576,7 +585,7 @@ public class CadastroServico extends javax.swing.JFrame {
 
     private void tfNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNomeKeyTyped
         char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACKSPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"|| ADMITE APENAS TEXTO!!! ||");
         }
@@ -584,7 +593,7 @@ public class CadastroServico extends javax.swing.JFrame {
 
     private void tfEnderecoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfEnderecoKeyTyped
         char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACKSPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
             evt.consume();
             JOptionPane.showMessageDialog(null,"|| ADMITE APENAS TEXTO!!! ||");
         }
@@ -712,5 +721,6 @@ public class CadastroServico extends javax.swing.JFrame {
     private javax.swing.JTextField tfSolicitador;
     private javax.swing.JTextField tfTelefone;
     private javax.swing.JTextField tfValor;
+    private JLabel lblLocalizao;
     // End of variables declaration//GEN-END:variables
 }
