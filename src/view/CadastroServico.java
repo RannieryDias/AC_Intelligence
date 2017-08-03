@@ -15,6 +15,10 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import model.dados.RepositorioServico;
 import model.negocio.beans.Servico;
+import javax.swing.JLabel;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JButton;
 
 /**
  *
@@ -383,6 +387,21 @@ public class CadastroServico extends javax.swing.JFrame {
                 tfHorarioKeyTyped(evt);
             }
         });
+        
+        JLabel lblLocal = new JLabel("LOCAL");
+        lblLocal.setFont(new Font("Tahoma", Font.BOLD, 10));
+        lblLocal.setForeground(Color.WHITE);
+        lblLocal.setBounds(10, 204, 40, 21);
+        jPanel4.add(lblLocal);
+        
+        JButton btnAdicionarLocal = new JButton("Adicionar Local");
+        btnAdicionarLocal.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		TelaMapa telamapa = new TelaMapa();
+        	}
+        });
+        btnAdicionarLocal.setBounds(90, 211, 103, 23);
+        jPanel4.add(btnAdicionarLocal);
         jPanel4.add(tfHorario);
         tfHorario.setBounds(400, 130, 240, 30);
 
@@ -712,5 +731,4 @@ public class CadastroServico extends javax.swing.JFrame {
     private javax.swing.JTextField tfSolicitador;
     private javax.swing.JTextField tfTelefone;
     private javax.swing.JTextField tfValor;
-    // End of variables declaration//GEN-END:variables
 }

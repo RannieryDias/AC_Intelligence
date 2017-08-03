@@ -22,16 +22,16 @@ public class ConexaoBD {
    private String caminho = "jdbc:postgresql://localhost:5432/projetoGerenciamento";   //DIZ QUAL O CAMINHO
    private String usuario = "postgres";   //USUARIO DO BANCO
    private String senha = "info123456789";     //SENHA DO BANCO
-   public Connection con;   //RESPONSﾃ〃EL PELA CONEXﾃグ
+   public Connection con;   //RESPONSﾁVEL PELA CONEXﾃO
    
-   public void conexao(){ //REALIZA A CONEXﾃグ COM O BANCO DE DADOS
+   public void conexao(){ //REALIZA A CONEXﾃO COM O BANCO DE DADOS
      
        try {
             System.setProperty("jdbc.Drivers", driver); //SETA O DRIVE DE CONEXﾃグ
            con=DriverManager.getConnection(caminho, usuario, senha);
-           //JOptionPane.showMessageDialog(null, "CONEXﾃグ EFETUADA!!!");
+           //JOptionPane.showMessageDialog(null, "CONEXﾃO EFETUADA!!!");
        } catch (SQLException ex) {
-           JOptionPane.showMessageDialog(null, "\n ERRO DE CONEXﾃグ!!! \n" + ex.getMessage());
+           JOptionPane.showMessageDialog(null, "\n ERRO DE CONEXﾃO!!! \n" + ex.getMessage());
        }
    }
    
@@ -40,14 +40,14 @@ public class ConexaoBD {
            stm = con.createStatement(rs.TYPE_SCROLL_INSENSITIVE,rs.CONCUR_READ_ONLY); //PERCORRE O BANCO TANTO DE CIMA PARA BAIXO COMO DE BAIXO PARA CIMA
            rs = stm.executeQuery(sql);
        } catch (SQLException ex) {
-         JOptionPane.showMessageDialog(null, "\n ERRO NA EXECUﾃ�ﾃグ DO SQL!!! \n" + ex.getMessage());
+         JOptionPane.showMessageDialog(null, "\n ERRO NA EXECUﾇﾃO DO SQL!!! \n" + ex.getMessage());
        }
    }
    
    public void desconectar(){  //REALIZA O FECHAMENTO DO BANCO DE DADOS
        try {
            con.close();
-          // JOptionPane.showMessageDialog(null, "DESCONECTADO COM SUCESOO!!! \n");
+          // JOptionPane.showMessageDialog(null, "DESCONECTADO COM SUCESSO!!! \n");
        } catch (SQLException ex) {
           JOptionPane.showMessageDialog(null, "ERRO AO DESCONECTAR!!! \n" + ex.getMessage());
        }
