@@ -29,6 +29,7 @@ public class CadastroServico extends javax.swing.JFrame {
       RepositorioServico control = new RepositorioServico();
       Servico servico = new Servico();
       private Timer timer;
+      private String local = "";
    
    
     public CadastroServico() {
@@ -397,7 +398,12 @@ public class CadastroServico extends javax.swing.JFrame {
         JButton btnAdicionarLocal = new JButton("Adicionar Local");
         btnAdicionarLocal.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		TelaMapa telamapa = new TelaMapa();
+        		TelaMapa telaMapa = new TelaMapa();
+        		telaMapa.setVisible(true);
+        		String temp= telaMapa.toString();
+        		
+        		
+        		System.out.println("isso aqui é o que ta saindo: " + temp);
         	}
         });
         btnAdicionarLocal.setBounds(90, 211, 103, 23);
@@ -531,7 +537,7 @@ public class CadastroServico extends javax.swing.JFrame {
         servico.setId(tfId.getText());
         servico.setSolicitador(tfSolicitador.getText());
         servico.setNome(tfNome.getText());
-        servico.setEndereco(tfEndereco.getText());
+        
         servico.setTelefone(tfTelefone.getText());
         servico.setValor(tfValor.getText());
         servico.setData(tfData.getText());
@@ -682,6 +688,17 @@ public class CadastroServico extends javax.swing.JFrame {
             new CadastroServico().setVisible(true);
         });
     }
+    
+    
+    
+    public void setLocal(String localMapa){
+    	tfEndereco.setText(localMapa);
+    }
+
+    
+    
+    
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btFecharCadastroServico;

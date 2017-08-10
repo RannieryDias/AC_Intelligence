@@ -11,11 +11,13 @@ import java.awt.event.ActionEvent;
 public class TelaMapa extends JFrame{
 	
 			int zoom = 12;
-			String local = "";
+			private String local = "";
+			public String localSalvo = "";
 			private javax.swing.JLabel mapaLabel;
 	    	
 			ConexaoGMapsAPI conexao = new ConexaoGMapsAPI();
 		    
+			
 			//método construtor
 		    public TelaMapa() {
 		        super("AC Intelligence");
@@ -34,8 +36,8 @@ public class TelaMapa extends JFrame{
 		        lblBuscarLocal.setBounds(10, 11, 59, 14);
 		        getContentPane().add(lblBuscarLocal);
 		        
-		        JTextField textFieldBuscar;
-		        textFieldBuscar = new JTextField();
+		        
+		        JTextField textFieldBuscar = new JTextField();
 		        textFieldBuscar.setBounds(79, 8, 126, 20);
 		        getContentPane().add(textFieldBuscar);
 		        textFieldBuscar.setColumns(10);
@@ -45,6 +47,7 @@ public class TelaMapa extends JFrame{
 		        	public void actionPerformed(ActionEvent e) {
 		        		local = textFieldBuscar.getText();
 		        		local = local.replaceAll("\\s", "+");
+		        		System.out.println(local);
 		        		mapaLabel.setIcon(conexao.atualizarMapa(local, zoom));
 		        	}
 		        });
@@ -76,6 +79,13 @@ public class TelaMapa extends JFrame{
 		        btnMenos.setBounds(555, 7, 43, 23);
 		        getContentPane().add(btnMenos);
 		        
+		        JButton btnSalvarLocal = new JButton("Salvar Local");
+		        btnSalvarLocal.addActionListener(new ActionListener() {
+		        	public void actionPerformed(ActionEvent arg0) {
+		        		localSalvo = textFieldBuscar.getText();
+		        	}
+		        });
+		        
 		        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		        layout.setHorizontalGroup(
 		        	layout.createParallelGroup(Alignment.LEADING)
@@ -89,28 +99,29 @@ public class TelaMapa extends JFrame{
 		        					.addComponent(textFieldBuscar, GroupLayout.PREFERRED_SIZE, 166, GroupLayout.PREFERRED_SIZE)
 		        					.addPreferredGap(ComponentPlacement.RELATED)
 		        					.addComponent(btnBuscar)
-		        					.addPreferredGap(ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+		        					.addGap(18)
 		        					.addComponent(lblZoom)
-		        					.addPreferredGap(ComponentPlacement.RELATED)
+		        					.addPreferredGap(ComponentPlacement.UNRELATED)
 		        					.addComponent(btnMais)
-		        					.addPreferredGap(ComponentPlacement.RELATED)
+		        					.addPreferredGap(ComponentPlacement.UNRELATED)
 		        					.addComponent(btnMenos, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
-		        					.addGap(66))
-		        				.addGroup(layout.createSequentialGroup()
-		        					.addComponent(mapaLabel, GroupLayout.DEFAULT_SIZE, 551, Short.MAX_VALUE)
-		        					.addContainerGap())))
+		        					.addGap(18)
+		        					.addComponent(btnSalvarLocal))
+		        				.addComponent(mapaLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+		        			.addContainerGap())
 		        );
 		        layout.setVerticalGroup(
 		        	layout.createParallelGroup(Alignment.TRAILING)
 		        		.addGroup(layout.createSequentialGroup()
 		        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 		        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+		        				.addComponent(btnBuscar)
+		        				.addComponent(textFieldBuscar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+		        				.addComponent(lblBuscarLocal)
 		        				.addComponent(lblZoom)
 		        				.addComponent(btnMais)
 		        				.addComponent(btnMenos)
-		        				.addComponent(btnBuscar)
-		        				.addComponent(textFieldBuscar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-		        				.addComponent(lblBuscarLocal))
+		        				.addComponent(btnSalvarLocal))
 		        			.addGap(18)
 		        			.addComponent(mapaLabel, GroupLayout.PREFERRED_SIZE, 640, GroupLayout.PREFERRED_SIZE))
 		        );
@@ -118,6 +129,12 @@ public class TelaMapa extends JFrame{
 		        pack();
 		        
 		    }
+		    
+		    public String getLocal() {
+		    	
+		    	return this.localSalvo;
+		    }		    
+		    
 		    @SuppressWarnings("unchecked")
 
 		    public static void main(String args[]) {
@@ -148,7 +165,7 @@ public class TelaMapa extends JFrame{
 
 		    }
 		    
-		  
+
 }
 
 

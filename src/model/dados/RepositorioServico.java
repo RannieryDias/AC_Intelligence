@@ -33,14 +33,14 @@ public class RepositorioServico implements IRepositorioServico{
                     
 	        }
 
-	//M�TODOS CADASTRAR
+	//Mï¿½TODOS CADASTRAR
                 @Override
 		public void cadastrar (Servico servico){
 		   servicos.add(servico);
                    salvar(servico);
 		}
 
-	//M�TODOS BUSCAR
+	//Mï¿½TODOS BUSCAR
                 @Override
 		public Servico buscar(String id) throws IDIException{
 	            Servico s = null;
@@ -56,7 +56,7 @@ public class RepositorioServico implements IRepositorioServico{
                     }
       
 		
-	//M�TODO REMOVER
+	//Mï¿½TODO REMOVER
                 @Override
 		public void remover(String id) throws IDIException{
 		    boolean r = false;
@@ -73,7 +73,7 @@ public class RepositorioServico implements IRepositorioServico{
 	  
 		}
 
-	//M�TODO ATUALIZAR
+	//Mï¿½TODO ATUALIZAR
                 @Override
 		public void atualizar(Servico servico, String id) throws ONExistenteException, IDIException{
 			remover(id);
@@ -138,7 +138,7 @@ public class RepositorioServico implements IRepositorioServico{
             servico.setData(conex.rs.getString("data"));
             servico.setHorario(conex.rs.getString("horario"));
         }catch(SQLException ex){
-            JOptionPane.showMessageDialog(null,"ID INVÁLIDO !!!");
+            JOptionPane.showMessageDialog(null,"ID INVÃ�LIDO !!!");
         }    
         conex.desconectar();
         return servico;

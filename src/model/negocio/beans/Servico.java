@@ -13,11 +13,11 @@ public class Servico {
         private String pesquisa;
         private String localizacao;
         private int cod_servico;
-        private int setCod_servico;
         
-	
-
-public String getLocalizacao() {
+        
+        
+        
+        public String getLocalizacao() {
 			return localizacao;
 		}
 
@@ -115,7 +115,6 @@ public void setHorario(String horario) {
      * @param cod_servico the cod_servico to set
      */
     public void setCod_servico(int cod_servico) {
-        this.setCod_servico = cod_servico;
     }
 
     /**
