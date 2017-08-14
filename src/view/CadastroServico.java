@@ -84,7 +84,6 @@ public class CadastroServico extends javax.swing.JFrame {
         btSalvarServico = new javax.swing.JButton();
         btFecharCadastroServico = new javax.swing.JButton();
         tfNome = new javax.swing.JTextField();
-        tfEndereco = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -294,14 +293,6 @@ public class CadastroServico extends javax.swing.JFrame {
         jPanel4.add(tfNome);
         tfNome.setBounds(90, 90, 240, 30);
 
-        tfEndereco.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                tfEnderecoKeyTyped(evt);
-            }
-        });
-        jPanel4.add(tfEndereco);
-        tfEndereco.setBounds(90, 130, 240, 30);
-
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("SOLICITADOR");
@@ -389,26 +380,19 @@ public class CadastroServico extends javax.swing.JFrame {
             }
         });
         
-        JLabel lblLocal = new JLabel("LOCAL");
-        lblLocal.setFont(new Font("Tahoma", Font.BOLD, 10));
-        lblLocal.setForeground(Color.WHITE);
-        lblLocal.setBounds(10, 204, 40, 21);
-        jPanel4.add(lblLocal);
-        
         JButton btnAdicionarLocal = new JButton("Adicionar Local");
         btnAdicionarLocal.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		TelaMapa telaMapa = new TelaMapa();
         		telaMapa.setVisible(true);
-        		String temp = telaMapa.getLocal();
-        		tfEndereco.setText(temp);
-        		removeAll();
+        		local = telaMapa.getLocal();
+        		/*removeAll();
         		revalidate();
-        		repaint();
-        		System.out.println("isso aqui é o que ta saindo: " + temp);
+        		repaint();*/
+        		System.out.println("isso aqui é o que ta saindo: " + local);
         	}
         });
-        btnAdicionarLocal.setBounds(90, 211, 103, 23);
+        btnAdicionarLocal.setBounds(90, 136, 120, 23);
         jPanel4.add(btnAdicionarLocal);
         jPanel4.add(tfHorario);
         tfHorario.setBounds(400, 130, 240, 30);
@@ -523,7 +507,7 @@ public class CadastroServico extends javax.swing.JFrame {
 
         
         
-     if(tfId.getText().equals("") ||tfSolicitador.getText().equals("") || tfNome.getText().equals("") || tfEndereco.getText().equals("") || tfTelefone.getText().equals("") || tfValor.getText().equals("") || tfData.getText().equals("") || tfHorario.getText().equals("")){
+     if(tfId.getText().equals("") ||tfSolicitador.getText().equals("") || tfNome.getText().equals("") || local.equals("") || tfTelefone.getText().equals("") || tfValor.getText().equals("") || tfData.getText().equals("") || tfHorario.getText().equals("")){
          JOptionPane.showMessageDialog(null,"VERFIQUE SE ALGUM CAMPO ESTÁ VAZIO !!!");
          return;
      }
@@ -539,7 +523,7 @@ public class CadastroServico extends javax.swing.JFrame {
         servico.setId(tfId.getText());
         servico.setSolicitador(tfSolicitador.getText());
         servico.setNome(tfNome.getText());
-        
+        servico.setLocalizacao(local);
         servico.setTelefone(tfTelefone.getText());
         servico.setValor(tfValor.getText());
         servico.setData(tfData.getText());
@@ -549,7 +533,6 @@ public class CadastroServico extends javax.swing.JFrame {
         tfId.setText(" ");
         tfSolicitador.setText("");
         tfNome.setText(" ");
-        tfEndereco.setText(" ");
         tfTelefone.setText(" ");
         tfValor.setText(" ");
         tfData.setText(" ");
@@ -608,16 +591,6 @@ public class CadastroServico extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"|| ADMITE APENAS TEXTO!!! ||");
         }
     }//GEN-LAST:event_tfNomeKeyTyped
-
-    private void tfEnderecoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfEnderecoKeyTyped
-        char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
-            evt.consume();
-            JOptionPane.showMessageDialog(null,"|| ADMITE APENAS TEXTO!!! ||");
-        }
-        
-   
-    }//GEN-LAST:event_tfEnderecoKeyTyped
 
     private void tfSolicitadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSolicitadorActionPerformed
        
@@ -691,14 +664,7 @@ public class CadastroServico extends javax.swing.JFrame {
         });
     }
     
-    
-    
-    public void setLocal(String localMapa){
-    	tfEndereco.setText(localMapa);
-    }
 
-    
-    
     
     
     
@@ -742,7 +708,6 @@ public class CadastroServico extends javax.swing.JFrame {
     private javax.swing.JLabel lbMinutos;
     private javax.swing.JLabel lbSegundos;
     private javax.swing.JFormattedTextField tfData;
-    private javax.swing.JTextField tfEndereco;
     private javax.swing.JFormattedTextField tfHorario;
     private javax.swing.JTextField tfId;
     private javax.swing.JTextField tfNome;
