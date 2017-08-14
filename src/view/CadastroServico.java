@@ -301,7 +301,7 @@ public class CadastroServico extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("NOME");
+        jLabel19.setText("TIPO");
         jPanel4.add(jLabel19);
         jLabel19.setBounds(10, 100, 40, 13);
 

@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import model.dados.RepositorioCliente;
 import model.negocio.beans.Cliente;
+import javax.swing.JButton;
 
 
 /**
@@ -28,7 +29,7 @@ public class CadastroCliente extends javax.swing.JFrame {
    RepositorioCliente control = new RepositorioCliente();
    Cliente cliente = new Cliente();
    private Timer timer;
-   
+   String local = "";
    
    
   
@@ -69,7 +70,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         panel1 = new java.awt.Panel();
         jPanel1 = new javax.swing.JPanel();
         btVoltarTelaPrincipal = new javax.swing.JButton();
-        tfEndereco = new javax.swing.JTextField();
         tfCpf = new javax.swing.JTextField();
         tfNomeCliente = new javax.swing.JTextField();
         tfTelefone = new javax.swing.JTextField();
@@ -120,20 +120,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         });
         jPanel1.add(btVoltarTelaPrincipal);
         btVoltarTelaPrincipal.setBounds(20, 240, 60, 60);
-
-        tfEndereco.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        tfEndereco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfEnderecoActionPerformed(evt);
-            }
-        });
-        tfEndereco.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                tfEnderecoKeyTyped(evt);
-            }
-        });
-        jPanel1.add(tfEndereco);
-        tfEndereco.setBounds(100, 100, 270, 30);
 
         tfCpf.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tfCpf.addActionListener(new java.awt.event.ActionListener() {
@@ -238,7 +224,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         jPanel2.setBounds(400, 10, 90, 30);
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/Logo Javaadul - Cópia.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/Logo Javaadul - Copia.png"))); // NOI18N
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(jButton2);
         jButton2.setBounds(530, 10, 80, 90);
@@ -272,6 +258,21 @@ public class CadastroCliente extends javax.swing.JFrame {
         jLabel10.setText("ENDEREÇO");
         jPanel1.add(jLabel10);
         jLabel10.setBounds(20, 110, 70, 15);
+        
+        btnAdicionarLocal = new JButton("Adicionar Local");
+        btnAdicionarLocal.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		TelaMapa telaMapa = new TelaMapa();
+        		telaMapa.setVisible(true);
+        		local = telaMapa.getLocal();
+        		/*removeAll();
+        		revalidate();
+        		repaint();*/
+        		System.out.println("isso aqui é o que ta saindo: " + local);
+        	}
+        });
+        btnAdicionarLocal.setBounds(100, 107, 125, 23);
+        jPanel1.add(btnAdicionarLocal);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/papel-de-parede-3d-7.jpg"))); // NOI18N
         jLabel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -306,10 +307,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfTelefoneActionPerformed
 
-    private void tfEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfEnderecoActionPerformed
-        
-    }//GEN-LAST:event_tfEnderecoActionPerformed
-
     private void tfCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCpfActionPerformed
        
         
@@ -331,7 +328,7 @@ public class CadastroCliente extends javax.swing.JFrame {
 
     private void btSalvarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarClienteActionPerformed
  
-     if(tfNomeCliente.getText().equals("") || tfCpf.getText().equals("") || tfEndereco.getText().equals("") || tfTelefone.getText().equals("") || tfEmail.getText().equals("")){
+     if(tfNomeCliente.getText().equals("") || tfCpf.getText().equals("") || local.equals("") || tfTelefone.getText().equals("") || tfEmail.getText().equals("")){
          JOptionPane.showMessageDialog(null,"ALGUM CAMPO ESTÁ VAZIO"); 
          return; 
      }
@@ -347,14 +344,13 @@ public class CadastroCliente extends javax.swing.JFrame {
         
         cliente.setNome(tfNomeCliente.getText());
         cliente.setCpf(tfCpf.getText());        
-        cliente.setEndereco(tfEndereco.getText());
+        cliente.setEndereco(local);
         cliente.setTelefone(tfTelefone.getText());
         cliente.setEmail(tfEmail.getText());                    
         control.cadastrar(cliente);
         //LIMPA OS CAMPOS APÓS SALVAR
         tfNomeCliente.setText(" ");
         tfCpf.setText(" ");
-        tfEndereco.setText(" ");
         tfTelefone.setText(" ");
         tfEmail.setText(" ");
      }
@@ -389,14 +385,6 @@ public class CadastroCliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"|| ADMITE APENAS NÚMEROS!!! ||","", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_tfTelefoneKeyTyped
-
-    private void tfEnderecoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfEnderecoKeyTyped
-        char c = evt.getKeyChar();
-        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=(char)KeyEvent.VK_BACK_SPACE) && (c!=(char)KeyEvent.VK_SPACE)){ 
-            evt.consume();
-            JOptionPane.showMessageDialog(null,"|| ADMITE APENAS TEXTO!!! ||","", JOptionPane.INFORMATION_MESSAGE);
-        }
-    }//GEN-LAST:event_tfEnderecoKeyTyped
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        System.exit(0);
@@ -472,9 +460,9 @@ public class CadastroCliente extends javax.swing.JFrame {
     private java.awt.Panel panel1;
     private javax.swing.JTextField tfCpf;
     private javax.swing.JTextField tfEmail;
-    private javax.swing.JTextField tfEndereco;
     private javax.swing.JTextField tfNomeCliente;
     private javax.swing.JTextField tfOculta;
     private javax.swing.JTextField tfTelefone;
+    private JButton btnAdicionarLocal;
     // End of variables declaration//GEN-END:variables
 }
