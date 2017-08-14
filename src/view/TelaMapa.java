@@ -18,7 +18,7 @@ public class TelaMapa extends JFrame{
 			ConexaoGMapsAPI conexao = new ConexaoGMapsAPI();
 		    
 			
-			//método construtor
+			//mï¿½todo construtor
 		    public TelaMapa() {
 		        super("AC Intelligence");
 		        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,7 +26,7 @@ public class TelaMapa extends JFrame{
 		        mapaLabel.setIcon(conexao.atualizarMapa(local, zoom));
 		    }
 
-		    //método de criação da janela
+		    //mï¿½todo de criaï¿½ï¿½o da janela
 		    public void desenhaJanela() {
 		    	getContentPane().setLayout(null);
 		        
@@ -83,6 +83,7 @@ public class TelaMapa extends JFrame{
 		        btnSalvarLocal.addActionListener(new ActionListener() {
 		        	public void actionPerformed(ActionEvent arg0) {
 		        		localSalvo = textFieldBuscar.getText();
+		        		dispose();
 		        	}
 		        });
 		        

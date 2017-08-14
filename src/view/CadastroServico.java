@@ -400,9 +400,11 @@ public class CadastroServico extends javax.swing.JFrame {
         	public void actionPerformed(ActionEvent e) {
         		TelaMapa telaMapa = new TelaMapa();
         		telaMapa.setVisible(true);
-        		String temp= telaMapa.toString();
-        		
-        		
+        		String temp = telaMapa.getLocal();
+        		tfEndereco.setText(temp);
+        		removeAll();
+        		revalidate();
+        		repaint();
         		System.out.println("isso aqui é o que ta saindo: " + temp);
         	}
         });
