@@ -330,8 +330,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void miCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCadastrarClienteActionPerformed
-        CadastroCliente form = new CadastroCliente();
-        form.setVisible(true);
+    	TelaMapa telaMapa = new TelaMapa();
+		telaMapa.setVisible(true);
         dispose();
     }//GEN-LAST:event_miCadastrarClienteActionPerformed
 

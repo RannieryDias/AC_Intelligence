@@ -83,6 +83,9 @@ public class TelaMapa extends JFrame{
 		        btnSalvarLocal.addActionListener(new ActionListener() {
 		        	public void actionPerformed(ActionEvent arg0) {
 		        		localSalvo = textFieldBuscar.getText();
+		        		CadastroCliente form = new CadastroCliente();
+		                form.setLocal(local);
+		        		form.setVisible(true);
 		        		dispose();
 		        	}
 		        });

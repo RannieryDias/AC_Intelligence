@@ -16,6 +16,7 @@ import javax.swing.Timer;
 import model.dados.RepositorioCliente;
 import model.negocio.beans.Cliente;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 
 /**
@@ -87,7 +88,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -161,7 +161,7 @@ public class CadastroCliente extends javax.swing.JFrame {
             }
         });
         jPanel1.add(tfTelefone);
-        tfTelefone.setBounds(100, 140, 270, 30);
+        tfTelefone.setBounds(100, 101, 270, 30);
 
         tfEmail.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tfEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -170,7 +170,7 @@ public class CadastroCliente extends javax.swing.JFrame {
             }
         });
         jPanel1.add(tfEmail);
-        tfEmail.setBounds(100, 180, 270, 30);
+        tfEmail.setBounds(100, 142, 270, 30);
 
         btSalvarCliente.setBackground(new java.awt.Color(255, 255, 255));
         btSalvarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/AdicionarContatos.png"))); // NOI18N
@@ -245,34 +245,13 @@ public class CadastroCliente extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("EMAIL");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(20, 190, 70, 15);
+        jLabel8.setBounds(20, 149, 70, 15);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("TELEFONE");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(20, 150, 70, 15);
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("ENDEREÇO");
-        jPanel1.add(jLabel10);
-        jLabel10.setBounds(20, 110, 70, 15);
-        
-        btnAdicionarLocal = new JButton("Adicionar Local");
-        btnAdicionarLocal.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) {
-        		TelaMapa telaMapa = new TelaMapa();
-        		telaMapa.setVisible(true);
-        		local = telaMapa.getLocal();
-        		/*removeAll();
-        		revalidate();
-        		repaint();*/
-        		System.out.println("isso aqui é o que ta saindo: " + local);
-        	}
-        });
-        btnAdicionarLocal.setBounds(100, 107, 125, 23);
-        jPanel1.add(btnAdicionarLocal);
+        jLabel9.setBounds(20, 108, 70, 15);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/papel-de-parede-3d-7.jpg"))); // NOI18N
         jLabel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -327,7 +306,8 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltarTelaPrincipalActionPerformed
 
     private void btSalvarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarClienteActionPerformed
- 
+    
+    
      if(tfNomeCliente.getText().equals("") || tfCpf.getText().equals("") || local.equals("") || tfTelefone.getText().equals("") || tfEmail.getText().equals("")){
          JOptionPane.showMessageDialog(null,"ALGUM CAMPO ESTÁ VAZIO"); 
          return; 
@@ -436,14 +416,23 @@ public class CadastroCliente extends javax.swing.JFrame {
             new CadastroCliente().setVisible(true);
         });
     }
-
+    
+    public void setLocal(String localizacao) {
+    	String temp = localizacao;
+    	
+    	temp = temp.replaceAll("\\+", " ");
+    	
+    	local = temp;
+    	System.out.println("isso aqui ta sendo impresso: " + local);
+    	
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btSalvarCliente;
     private javax.swing.JButton btVoltarTelaPrincipal;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -463,6 +452,4 @@ public class CadastroCliente extends javax.swing.JFrame {
     private javax.swing.JTextField tfNomeCliente;
     private javax.swing.JTextField tfOculta;
     private javax.swing.JTextField tfTelefone;
-    private JButton btnAdicionarLocal;
-    // End of variables declaration//GEN-END:variables
 }
